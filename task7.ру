@@ -1,1 +1,27 @@
 #Задание 5
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+]
+print("Матрица 3x3:")
+for i in range(3):
+    main_diagonal_sum += matrix[i][i]
+print(f"\nСумма главной диогонали (слева направо): {main_diagonal_sum}")
+print(f"Элементы: {matrix[0][0]} + {matrix[1][1]} + {matrix[2][2]} = {main_diagonal_sum}")
+secondary_diadonal_sum = 0
+for i in range(3):
+    secondary_diadonal_sum += matrix[i][2 - i]
+print(f"\nСумма побочной диагонали (справа налево): {secondary_diadonal_sum}")
+print(f"Элемент: {matrix[0][0]} + {matrix[1][1]} + {matrix[2][0]} = {secondary_diadonal_sum}")
+print("\n" + "="*50)
+print("Пример с другой матрицей:")
+import random
+random_matrix = [[random.randint(1,10) for _ in range(3)] for _ in range(3)]
+print("\nСлучайная матрица:")
+for row in random_matrix:
+    print(row)
+random_main_sum = sum(random_matrix[i][i] for i in range(3))
+print(f"\nСумма главной диагонали: {random_main_sum}")
+random_secondary_sum = sum(random_matrix[i][2 - i] for i in range(3))
+print(f"Сумма побочной диагонали: {random_secondary_sum}")
